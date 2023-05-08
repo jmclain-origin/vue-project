@@ -1,35 +1,21 @@
-@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
+@layer base {
   body {
-    display: flex;
-    place-items: center;
+    @apply bg-neutral-500;
   }
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+@layer components {
+  .input {
+    @apply bg-neutral-300 border border-black rounded-lg w-full shadow-md shadow-black/40 focus:border-purple-600;
+  }
+  .input-group {
+    @apply space-y-2 p-3;
+  }
+  .button {
+    @apply bg-purple-400 py-2 px-3 rounded-lg border border-black shadow-md shadow-black/50 active:translate-y-2;
   }
 }
